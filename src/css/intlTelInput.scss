@@ -38,9 +38,10 @@
 
 .iti {
   //* We need position on the container so the selected country can be absolutely positioned over the input.
-  position: relative;
+  display: flex;
+  gap: 1rem;
   //* Keep the input's default inline properties.
-  display: inline-block;
+/*  display: inline-block; */
 
   //* Paul Irish (paulirish) says this is ok.
   //* http://www.paulirish.com/2012/box-sizing-border-box-ftw/
@@ -90,36 +91,17 @@
     margin-right: 0;
   }
 
-  &__country-container {
-    //* Positioned over the top of the input.
-    position: absolute;
-    //* Full height.
-    top: 0;
-    bottom: 0;
-    right: 0;
-    //* Prevent the highlighted child from overlapping the input border.
-    padding: var(--iti-border-width);
-  }
-
   //* Now a button element.
   &__selected-country {
-    //* Render above the input.
-    z-index: 1;
-    position: relative;
     display: flex;
     align-items: center;
-    //* This must be full-height both for the hover highlight, and to push down the dropdown so it appears below the input.
-    height: 100%;
-
-    //* Reset button styles (can't use all:unset as lose browser default focus outline styles).
-    background: none;
-    border: 0;
-    margin: 0;
-    padding: 0;
+    border: 1px solid var(--gray-30);
+    outline: none;
+    height: 34px;
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-    border-radius: 0;
+    border-radius: 0.375rem;
     font-weight: inherit;
     line-height: inherit;
     text-decoration: none;
@@ -134,14 +116,11 @@
   }
 
   &__arrow {
-    margin-left: var(--iti-arrow-padding);
-
-    //* CSS triangle.
-    width: 0;
-    height: 0;
-    border-left: var(--iti-triangle-border) solid transparent;
-    border-right: var(--iti-triangle-border) solid transparent;
-    border-top: var(--iti-arrow-height) solid var(--iti-arrow-color);
+    width: 16px;
+    height: 8px;
+    border: none;
+    margin-left: .5rem;
+    background: url(/_nuxt/assets/arrow-dropdown.svg) center;
 
     [dir="rtl"] & {
       margin-right: var(--iti-arrow-padding);
@@ -149,8 +128,7 @@
     }
 
     &--up {
-      border-top: none;
-      border-bottom: var(--iti-arrow-height) solid var(--iti-arrow-color);
+      transform: rotate(180deg);
     }
   }
 
@@ -261,9 +239,6 @@
       }
     }
     .iti__country-container {
-      right: auto;
-      left: 0;
-
       [dir="rtl"] & {
         right: 0;
         left: auto;
@@ -290,11 +265,10 @@
   }
 
   .iti__selected-dial-code {
-    margin-left: 4px;
+    padding: 0 var(--iti-spacer-horizontal);
 
     [dir="rtl"] & {
       margin-left: 0;
-      margin-right: 4px;
     }
   }
 
