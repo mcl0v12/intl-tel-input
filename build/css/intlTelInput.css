@@ -76,11 +76,12 @@
   padding: 0 var(--iti-arrow-padding) 0 var(--iti-spacer-horizontal);
 }
 .iti__arrow {
+  display: none;
   width: 16px;
   height: 8px;
   border: none;
   margin-left: 0.5rem;
-  background: url(/_nuxt/assets/arrow-dropdown.svg) center;
+  /*   background: url(/_nuxt/assets/arrow-dropdown.svg) center; */
 }
 [dir=rtl] .iti__arrow {
   margin-right: var(--iti-arrow-padding);
