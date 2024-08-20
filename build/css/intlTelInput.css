@@ -76,7 +76,6 @@
   padding: 0 var(--iti-arrow-padding) 0 var(--iti-spacer-horizontal);
 }
 .iti__arrow {
-  display: none;
   width: 16px;
   height: 8px;
   border: none;
