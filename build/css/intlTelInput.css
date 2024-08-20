@@ -96,6 +96,7 @@
 .iti--inline-dropdown .iti__dropdown-content {
   position: absolute;
   z-index: 2;
+  max-width: max-content;
   margin-top: 3px;
   margin-left: calc(var(--iti-border-width) * -1);
   border: var(--iti-border-width) solid var(--iti-border-color);
@@ -103,9 +104,10 @@
 }
 .iti__search-input {
   width: 100%;
-  border-width: 0;
-  border-radius: 3px;
+  outline: none;
   padding: 9px 12px;
+  border-bottom: 1px solid var(--gray-30);
+  transition: border 0.3s ease;
 }
 .iti__search-input + .iti__country-list {
   border-top: 1px solid var(--iti-border-color);
