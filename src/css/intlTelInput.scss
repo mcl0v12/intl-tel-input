@@ -116,11 +116,12 @@
   }
 
   &__arrow {
+    display: none;
     width: 16px;
     height: 8px;
     border: none;
     margin-left: .5rem;
-    background: url(/_nuxt/assets/arrow-dropdown.svg) center;
+ /*   background: url(/_nuxt/assets/arrow-dropdown.svg) center; */
 
     [dir="rtl"] & {
       margin-right: var(--iti-arrow-padding);
